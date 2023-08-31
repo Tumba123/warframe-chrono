@@ -1,6 +1,5 @@
 body {
   background-color: #000;
-
   overflow-x: hidden;
 }
 
@@ -373,4 +372,133 @@ a {
 
 #myBtn:hover {
   background-color: #555; /* Add a dark-grey background on hover */
+}
+
+.modal {
+  padding: 2em;
+  max-width: 100ch;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 20px;
+  z-index: 1000; /* Ensure the modal appears above everything */
+
+  & > * {
+    margin: 0 0 0.5rem 0;
+  }
+}
+
+/* Apply the blur effect to the background */
+.blur-background {
+  filter: blur(5px); /* Adjust the blur radius as needed */
+}
+
+#modal-button {
+  border: none;
+  padding: 10px 100px;
+  font-size: 20px;
+  position: relative;
+  background: transparent;
+  color: #00ffa2;
+  text-transform: uppercase;
+  border: 3px solid #00ffa2;
+  cursor: pointer;
+  transition: all 0.7s;
+  overflow: hidden;
+  border-radius: 100px;
+}
+
+#modal-button:hover {
+  color: #000;
+}
+span {
+  transition: all 0.7s;
+  z-index: -1;
+}
+
+button .first {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 0;
+  width: 25%;
+  height: 100%;
+  background: #00ffa2;
+}
+
+button:hover .first {
+  top: 0;
+  right: 0;
+}
+button .second {
+  content: "";
+  position: absolute;
+  left: 25%;
+  top: -100%;
+  height: 100%;
+  width: 25%;
+  background: #00ffa2;
+}
+
+button:hover .second {
+  top: 0;
+  left: 50%;
+}
+
+button .third {
+  content: "";
+  position: absolute;
+  left: 50%;
+  height: 100%;
+  top: 100%;
+  width: 25%;
+  background: #00ffa2;
+}
+
+button:hover .third {
+  top: 0;
+  left: 25%;
+}
+
+button .fourth {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 0;
+  height: 100%;
+  width: 25%;
+  background: #00ffa2;
+}
+
+button:hover .fourth {
+  top: 0;
+  left: 0;
+}
+
+.speculation {
+  font-family: 'Roboto', sans-serif; /* Use Roboto as the primary font, with a fallback to a generic sans-serif font if Roboto isn't available */
+  text-align:center;
+}
+
+.speculation-text{
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+}
+
+#Warning{
+  font-size:60px;
+  color: red;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    color: #ff0000;
+  }
+  50% {
+    color: #4b0303;
+  }
+}
+
+.button-div{
+  text-align: center;
 }
