@@ -91,3 +91,73 @@ function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
 }
+
+
+
+
+
+
+
+
+
+// Add an event listener to the "OK!" button to close the modal
+const okButton = document.querySelector('.close-button');
+
+okButton.addEventListener('click', function() {
+  hideDialog();
+});
+
+
+// Variable to track whether the modal has been shown during this visit
+let modalShown = false;
+
+// Function to create and show the dialog
+function showDialog() {
+    const modal = document.getElementById('modal');
+    modal.showModal();
+  
+    // Disable both vertical and horizontal scrolling when the modal is open
+    document.body.style.overflow = 'hidden';
+  
+    // Add the blur class to the main content
+    document.body.classList.add('blur-background');
+  }
+  
+  // Function to hide the dialog
+  function hideDialog() {
+    const modal = document.getElementById('modal');
+    modal.close();
+  
+    // Re-enable vertical scrolling while keeping horizontal scrolling hidden
+    document.body.style.overflowY = 'auto';
+  
+    // Remove the blur class from the main content
+    document.body.classList.remove('blur-background');
+  }
+
+// Define the target element by its ID ("pop-up")
+const targetElement = document.getElementById('pop-up');
+
+// Options for the Intersection Observer
+const options = {
+  root: null, // Use the viewport as the root
+  rootMargin: '0px', // No margin
+  threshold: 0.5, // Trigger when 50% of the target is visible
+};
+
+// Create the Intersection Observer
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting && !modalShown) {
+      // The target element is in focus, show the dialog only if it hasn't been shown
+      showDialog();
+      modalShown = true; // Set the flag to indicate it has been shown
+    } else {
+      // The target element is out of focus, hide the dialog
+      hideDialog();
+    }
+  });
+}, options);
+
+// Start observing the target element
+observer.observe(targetElement);
