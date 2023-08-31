@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Warframe Chrono</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
@@ -1152,7 +1156,7 @@
                         <div class="ag-timeline-card_meta">Grendel Prime</div>
                       </div>
                     </div>
-                    <div class="ag-timeline-card_item">
+                    <div class="ag-timeline-card_item" id="pop-up">
                       <div class="ag-timeline-card_inner">
                         <div class="ag-timeline-card_img-box">
                           <img src="https://pbs.twimg.com/media/F4ecufpXgAAzjtO?format=jpg&name=large" class="ag-timeline-card_img" width="720" height="320" alt="" />
@@ -1163,7 +1167,23 @@
                               <b>Expected Release Date:</b> <i>October, 2023</i>
                               <br>
                               This is just a speculation, nothing is confirmed yet appart the fact that Grendel is the next primed warframe.
-                              </br>                            
+                              </br>
+                              <dialog class="modal" id="modal">
+                                <h2 class="speculation"><span class="material-icons" id="Warning">warning</span>
+                                </h2>
+                                <p class="speculation-text">Please be advised that the release dates mentioned beyond this point are purely <b>speculative.</b>
+                                    They are based on a <b>pattern</b> observed in the past, where <b>Prime warframes</b> in Warframe were typically released <b>approximately</b> every three months. 
+                                    However, <b>these dates</b> have not been officially <b>confirmed</b> by <b>Digital Extremes</b>, the game's developer. 
+                                    Game release schedules are subject to change, and we recommend staying updated through official channels for the most accurate information.</p>
+                                <div class="button-div">
+                                    <button class="button close-button" id="modal-button">OK!
+                                        <span class="first"></span>
+                                        <span class="second"></span>
+                                        <span class="third"></span>
+                                        <span class="fourth"></span>
+                                    </button>
+                                </div>
+                              </dialog>                            
                           </div>
                         </div>
                       </div>
@@ -1171,6 +1191,8 @@
                     </div>
                   </div>
 
+                  <!--This is the popup SPOT!-->
+                  
                   <div class="js-timeline_item ag-timeline_item">
                     <div class="ag-timeline-card_box">
                       <div class="ag-timeline-card_meta-box">
@@ -1267,7 +1289,7 @@
                     <div class="ag-timeline-card_item">
                       <div class="ag-timeline-card_inner">
                         <div class="ag-timeline-card_img-box">
-                          <img src="https://preview.redd.it/what-do-you-guys-think-of-lavos-should-i-invest-in-him-v0-jmzm63pn04ca1.jpg?auto=webp&s=2e77884073febb1ce70d4b31364959b3fc4ec3a3" class="ag-timeline-card_img" width="720" height="320" alt="" />
+                          <img src="https://static.wikia.nocookie.net/warframe/images/f/f0/LavosOrphixVenomSplash.jpg" class="ag-timeline-card_img" width="720" height="320" alt="" />
                         </div>
                         <div class="ag-timeline-card_info">
                           <div class="ag-timeline-card_title">Lavos Prime</div>
@@ -1295,7 +1317,7 @@
                     <div class="ag-timeline-card_item">
                       <div class="ag-timeline-card_inner">
                         <div class="ag-timeline-card_img-box">
-                          <img src="https://i0.wp.com/warframe.today/wp-content/uploads/2021/06/sevagoth.jpg?w=900&ssl=1" class="ag-timeline-card_img" width="720" height="320" alt="" />
+                          <img src="https://static.wikia.nocookie.net/warframe/images/c/ce/SevagothTeaserSplash.jpg" class="ag-timeline-card_img" width="720" height="320" alt="" />
                         </div>
                         <div class="ag-timeline-card_info">
                           <div class="ag-timeline-card_title">Sevagoth Prime</div>
@@ -1323,7 +1345,7 @@
                     <div class="ag-timeline-card_item">
                       <div class="ag-timeline-card_inner">
                         <div class="ag-timeline-card_img-box">
-                          <img src="https://www.digitaltrends.com/wp-content/uploads/2021/07/yareli-warframe.jpg?p=1" class="ag-timeline-card_img" width="720" height="320" alt="" />
+                          <img src="https://static.wikia.nocookie.net/warframe/images/9/95/B85fae0ebc49c11b51196ce4fbc91b6f.png" class="ag-timeline-card_img" width="720" height="320" alt="" />
                         </div>
                         <div class="ag-timeline-card_info">
                           <div class="ag-timeline-card_title">Yareli Prime</div>
@@ -1342,7 +1364,7 @@
                   <div class="js-timeline_item ag-timeline_item">
                     <div class="ag-timeline-card_box">
                       <div class="ag-timeline-card_meta-box">
-                        <div class="ag-timeline-card_meta">Caliban  Prime</div>
+                        <div class="ag-timeline-card_meta">Gyre Prime</div>
                       </div>
                       <div class="js-timeline-card_point-box ag-timeline-card_point-box">
                         <div class="ag-timeline-card_point">2025</div>
@@ -1351,10 +1373,10 @@
                     <div class="ag-timeline-card_item">
                       <div class="ag-timeline-card_inner">
                         <div class="ag-timeline-card_img-box">
-                          <img src="https://warframe-web-assets.nyc3.cdn.digitaloceanspaces.com/uploads/thumbnails/e95097812962d60bc69cb8556ee1bf11_1600x900.png" class="ag-timeline-card_img" width="720" height="320" alt="" />
+                          <img src="https://warframe-web-assets.nyc3.cdn.digitaloceanspaces.com/uploads/4f0a40a995f1fc8d94405f6333761e7e.jpeg" class="ag-timeline-card_img" width="720" height="320" alt="" />
                         </div>
                         <div class="ag-timeline-card_info">
-                          <div class="ag-timeline-card_title">Caliban Prime</div>
+                          <div class="ag-timeline-card_title">Gyre Prime</div>
                           <div class="ag-timeline-card_desc">
                               <b>Expected Release Date:</b> <i>July, 2023</i>
                               <br>
@@ -1366,23 +1388,23 @@
                       <div class="ag-timeline-card_arrow"></div>
                     </div>
                   </div>
-
+                  
                   <div class="js-timeline_item ag-timeline_item">
                     <div class="ag-timeline-card_box">
                       <div class="js-timeline-card_point-box ag-timeline-card_point-box">
                         <div class="ag-timeline-card_point">2025</div>
                       </div>
                       <div class="ag-timeline-card_meta-box">
-                        <div class="ag-timeline-card_meta">Gyre Prime</div>
+                        <div class="ag-timeline-card_meta">Caliban Prime</div>
                       </div>
                     </div>
                     <div class="ag-timeline-card_item">
                       <div class="ag-timeline-card_inner">
                         <div class="ag-timeline-card_img-box">
-                          <img src="https://warframe-web-assets.nyc3.cdn.digitaloceanspaces.com/uploads/4f0a40a995f1fc8d94405f6333761e7e.jpeg" class="ag-timeline-card_img" width="720" height="320" alt="" />
+                          <img src="https://warframe-web-assets.nyc3.cdn.digitaloceanspaces.com/uploads/thumbnails/e95097812962d60bc69cb8556ee1bf11_1600x900.png" class="ag-timeline-card_img" width="720" height="320" alt="" />
                         </div>
                         <div class="ag-timeline-card_info">
-                          <div class="ag-timeline-card_title">Gyre Prime</div>
+                          <div class="ag-timeline-card_title">Caliban Prime</div>
                           <div class="ag-timeline-card_desc">
                               <b>Expected Release Date:</b> <i>October, 2015</i>
                               <br>
@@ -1463,7 +1485,7 @@
                     <div class="ag-timeline-card_item">
                       <div class="ag-timeline-card_inner">
                         <div class="ag-timeline-card_img-box">
-                          <img src="https://pbs.twimg.com/media/FpR06pMaAAMdses?format=jpg&name=4096x4096" class="ag-timeline-card_img" width="720" height="320" alt="" />
+                          <img src="https://static.wikia.nocookie.net/warframe/images/8/8e/CitrineVoidTunnel.jpeg" class="ag-timeline-card_img" width="720" height="320" alt="" />
                         </div>
                         <div class="ag-timeline-card_info">
                           <div class="ag-timeline-card_title">Citrine Prime</div>
